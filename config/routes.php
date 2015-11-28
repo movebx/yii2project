@@ -2,13 +2,8 @@
 return
     [
         [
-            'pattern' => 'home',
-            'route' => 'register/index',
-            'suffix' => '.zopa'
-        ],
-        [
-            'pattern' => 'jopa/<name:\w+>',
-            'route' => 'jopa/suka',
-            'defaults' => ['name' => 'marina'],
+            'pattern' => 'admin/delete/<id:\d+>',
+            'route' => 'admin/cpanel/delete',
+            //'defaults' => ['name' => 'marina'],
         ],
     ];

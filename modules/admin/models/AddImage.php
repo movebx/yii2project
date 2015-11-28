@@ -25,6 +25,7 @@ class AddImage extends Model
             ['imageFiles', 'file', 'maxFiles' => 5, 'extensions' => 'png, jpg, jpeg, gif',
                 'skipOnEmpty' => false, 'maxSize' => 5000000],
             ['alt', 'required'],
+            ['alt', 'string', 'length' => [5, 30]],
         ];
     }
 
@@ -40,12 +41,12 @@ class AddImage extends Model
             foreach($this->imageFiles as $file)
             {/* @var $file \yii\web\UploadedFile */
 
-                $imageRandName = substr(Yii::$app->security->generateRandomString(), 0, 10);
+                $imageRandName = Yii::$app->security->generateRandomString(12);
 
                 $file->saveAs(self::FULL_IMAGES_PATH.$imageRandName.'.'.$file->extension);
 
-
-                $transformation->thumbnail(new Box(300, rand(300, 500)))
+                $randHeight = rand(300, 500);
+                $transformation->thumbnail(new Box(300, $randHeight))
                     ->save(Yii::getAlias('@webroot/'.self::THUMBS_IMAGES_PATH.$imageRandName.'.'.$file->extension));
 
                 $transformation->apply($imagine->open(Yii::getAlias('@webroot/'.self::FULL_IMAGES_PATH.$imageRandName.'.'.$file->extension)));

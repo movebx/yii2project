@@ -1,13 +1,13 @@
 <?php
 
-//$routes = require(__DIR__.'/routes.php');
+$routes = require(__DIR__.'/routes.php');
 
 return [
     'urlManager' => [
         'enablePrettyUrl' => true,
         'showScriptName' => false,
         'enableStrictParsing' => false,
-        //'rules' => $routes,
+        'rules' => $routes,
     ],
 
     'assetManager' => [

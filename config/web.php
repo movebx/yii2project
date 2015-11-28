@@ -10,7 +10,9 @@ $config = [
     'language' => 'ru-RU',
     'charset' => 'UTF-8',
     'name' => '',
+    'layout' => 'basic',
     'components' => $components,
+    'defaultRoute' => 'default/index',
     'modules' => [
         'admin' => 'app\modules\admin\AdminModule',
 

@@ -5,22 +5,7 @@ use \yii\helpers\Html;
 
 $this->title = 'Upload new image';
 
-$flashBag = \Yii::$app->session->allFlashes;
-?>
 
-<?php
-    if(!empty($flashBag))
-        foreach($flashBag as $class => $messages)
-            foreach($messages as $message)
-            {
-?>
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <div id="alert-close" class="alert alert-<?= $class ?> "><strong><?= $class ?>!</strong> <?= $message ?></div>
-                    </div>
-                </div>
-<?php
-            }
 ?>
 
 
@@ -51,11 +36,4 @@ $flashBag = \Yii::$app->session->allFlashes;
             ?>
         </div>
     </div>
-    <script>
-        var alertClose = document.getElementById('alert-close');
-        if(alertClose !== null)
-            setTimeout(function()
-            {
-                $(alertClose).remove();
-            }, 4000);
-    </script>
+

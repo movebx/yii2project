@@ -9,6 +9,7 @@ use yii\bootstrap\NavBar;
 use yii\bootstrap\Nav;
 
 $this->title = 'Application control panel';
+$flashBag = \Yii::$app->session->allFlashes;
 ?>
 
 <?php CpanelAsset::register($this) ?>
@@ -29,8 +30,8 @@ $this->title = 'Application control panel';
 
 <?php
 NavBar::begin([
-    'brandLabel' => 'Admin panel',
-    'brandUrl' => '/admin/cpanel',
+    'brandLabel' => '<span class="glyphicon glyphicon-home"></span>',
+    'brandUrl' => '/',
     'options' => [
         'class' => 'navbar-inverse navbar-top',
     ],
@@ -39,8 +40,8 @@ echo Nav::widget([
     'options' => ['class' => 'navbar-nav navbar-left'],
     'items' => [
         [
-            'label' => '<span class="glyphicon glyphicon-home"></span>',
-            'url' => '/',
+            'label' => 'Cpanel',
+            'url' => '/admin/cpanel',
             'encode' => false,
         ],
         [
@@ -64,15 +65,39 @@ NavBar::end();
 ?>
 
 <div class="container body-dotted">
+    <?php
+    if(!empty($flashBag))
+        foreach($flashBag as $class => $messages)
+            foreach($messages as $message)
+            {
+                ?>
+                <div class="row row-margin">
+                    <div class="col-lg-12 text-center">
+                        <div id="alert-close" class="alert alert-<?= $class ?> "><strong><?= $class ?>!</strong> <?= $message ?></div>
+                    </div>
+                </div>
+                <?php
+            }
+    ?>
 
         <?= $content ?>
+    <div class="row">
+        <div class="col-lg-12 footer">
+
+        </div>
+    </div>
 </div>
 
 
 
 
 <script>
-
+    var alertClose = document.getElementById('alert-close');
+    if(alertClose !== null)
+        setTimeout(function()
+        {
+            $(alertClose).remove();
+        }, 4000);
 </script>
 <?php $this->endBody()?>
 </body>

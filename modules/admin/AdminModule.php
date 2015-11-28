@@ -16,6 +16,8 @@ class AdminModule extends Module
         Yii::$app->user->loginUrl = ['admin/login'];
         Yii::$app->user->identityClass = 'app\modules\admin\identity\Admin';
 
+
+
         Yii::configure($this, $this->config());
     }
 
@@ -27,4 +29,5 @@ class AdminModule extends Module
             'layout' => 'basic',
         ];
     }
+
 }
