@@ -14,6 +14,7 @@ class AddImage extends Model
 {
     const FULL_IMAGES_PATH = 'images/portfolio/full/';
     const THUMBS_IMAGES_PATH = 'images/portfolio/thumbs/';
+    const THUMB_REDUCTION = 3;
 
     public $alt;
     /* @var $imageFiles array */
@@ -38,15 +39,26 @@ class AddImage extends Model
             $transformation = new Transformation();
             $imagine = new Imagine();
 
+            //$randHeight = function() {
+              //return rand(250, 330);
+            //};
+
             foreach($this->imageFiles as $file)
             {/* @var $file \yii\web\UploadedFile */
 
                 $imageRandName = Yii::$app->security->generateRandomString(12);
+                $fullImagePath = self::FULL_IMAGES_PATH.$imageRandName.'.'.$file->extension;
+                $file->saveAs($fullImagePath);
 
-                $file->saveAs(self::FULL_IMAGES_PATH.$imageRandName.'.'.$file->extension);
+                $imgSizeReduct = function ($side = 'width') use ($fullImagePath) {
+                    $size = getimagesize($fullImagePath);
+                    if($side === 'width')
+                        return ($size[0] / self::THUMB_REDUCTION);
+                    if($side === 'height')
+                        return ($size[1] / self::THUMB_REDUCTION);
+                };
 
-                $randHeight = rand(300, 500);
-                $transformation->thumbnail(new Box(300, $randHeight))
+                $transformation->thumbnail(new Box($imgSizeReduct(), $imgSizeReduct('height')))
                     ->save(Yii::getAlias('@webroot/'.self::THUMBS_IMAGES_PATH.$imageRandName.'.'.$file->extension));
 
                 $transformation->apply($imagine->open(Yii::getAlias('@webroot/'.self::FULL_IMAGES_PATH.$imageRandName.'.'.$file->extension)));

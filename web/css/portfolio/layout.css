@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Nico';
+    src: url('../../fonts/Nicoletta.ttf');
+}
+
+.bor {
+    border: 1px solid white;
+}
+
+body {
+    background-color: #222;
+    min-height: 800px;
+}
+
+.header {
+    min-height: 300px;
+
+}
+
+.a-logo {
+    text-align: center;
+    font-family: 'Nico';
+    font-size: 9em;
+    font-weight: 700;
+    color: #a43ea0;
+    margin-top: 10%;
+
+}
+
+.a-logo b {
+    text-shadow: 0px 10px 2px black;
+    transition: text-shadow 0.3s ease-out;
+}
+
+.a-logo b:hover {
+    text-shadow: 0px -40px 2px black;
+}
+
+.nav-bar {
+    margin-top: 3%;
+}
+
+.nav-elem {
+    color: #000000;
+    font-weight: 600;
+    font-variant: small-caps;
+    opacity: 0.8;
+    text-shadow: 1px 1px 1px #0f0f0f;
+    transition: all 1s ease-out;
+}
+
+.nav-elem:active {
+    text-decoration: none;
+    color: #c090e4;
+}
+
+.nav-elem:hover {
+    text-decoration: none;
+    color: #c090e4;
+}
+
+.nav-elem div {
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+
+}
+
+.nav-elem:hover div {
+    visibility: visible;
+}
+
+.gallery {
+    width: 70%;
+    margin: 1% auto 0 auto;
+    min-height: 500px;
+    line-height: 0;
+    -webkit-column-count: 4;
+    -webkit-column-gap: 0px;
+    -moz-column-count: 4;
+    -moz-column-gap: 0px;
+    column-count: 4;
+    column-gap: 0px;
+}
+
+.img-container {
+    background-color: #222;
+}
+
+.p-bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    z-index: 2000;
+
+}
+
+.p-bar img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.gallery-elem {
+    display: inline-block;
+    width: 96% !important;
+    height: auto !important;
+    margin: 2% 2%;
+    -moz-box-shadow: 0px 0px 4px black;
+    -webkit-box-shadow: 0px 0px 4px black;
+    box-shadow: 0px 0px 4px black;
+    opacity: 0.9;
+    visibility: hidden;
+}
+
+.gallery-elem:hover {
+    opacity: 1;
+}
+
+
+
+
+
