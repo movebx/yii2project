@@ -6,4 +6,8 @@ return
             'route' => 'admin/cpanel/delete',
             //'defaults' => ['name' => 'marina'],
         ],
+        [
+            'pattern' => 'ajax',
+            'route' => 'default/ajax',
+        ]
     ];

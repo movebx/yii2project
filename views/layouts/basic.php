@@ -17,14 +17,12 @@ use app\assets\MyAsset;
 
         <meta charset="<?= Yii::$app->charset ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <?= Html::csrfMetaTags() ?>
 
         <?php $this->head() ?>
     </head>
 <body>
 <?php $this->beginBody()?>
-
-
-
 
 
 <div class="container-fluid">
@@ -54,10 +52,13 @@ use app\assets\MyAsset;
 
 
 </div>
+<footer>
+    <div class="row">
+        <div id="footer" class="col-xs-12">
 
-<script>
-
-</script>
+        </div>
+    </div>
+</footer>
 <?php $this->endBody()?>
 </body>
 </html>
