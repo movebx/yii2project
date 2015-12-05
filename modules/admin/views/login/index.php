@@ -2,7 +2,6 @@
 /* @var $this \yii\web\View */
 /* @var $model \app\modules\admin\models\AdminLogin */
 
-use Yii;
 use yii\helpers\Html;
 use app\modules\admin\assets\LoginAsset;
 use yii\widgets\ActiveForm;

@@ -2,7 +2,6 @@
 /* @var $content string */
 /* @var $this \yii\web\View */
 
-use Yii;
 use yii\helpers\Html;
 use app\modules\admin\assets\CpanelAsset;
 use yii\bootstrap\NavBar;

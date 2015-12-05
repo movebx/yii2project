@@ -19,6 +19,7 @@ return [
     'request' => [
         // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
         'cookieValidationKey' => '6EZuD8mK_KS4ZMfpjhpctiyaBEKwdyFB',
+        'baseUrl' => '',
     ],
 
     'cache' => [
