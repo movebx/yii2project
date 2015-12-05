@@ -1,0 +1,124 @@
+@media (min-width: 1200px) {
+
+
+}
+/* Для некоторых нетбуков и планшетов (таблеток) */
+@media (min-width: 768px) and (max-width: 979px) {
+    .nav-container {
+        font-size: 150%;
+    }
+
+    .gallery {
+        width: 70%;
+        margin: 1% auto 0 auto;
+        min-height: 500px;
+        line-height: 0;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 0px;
+        -moz-column-count: 3;
+        -moz-column-gap: 0px;
+        column-count: 3;
+        column-gap: 0px;
+    }
+
+}
+/* Для планшетов и некоторых телефонов */
+@media (max-width: 767px) {
+    .a-logo b {
+        text-shadow: 0px 5px 2px black;
+        transition: none;
+    }
+
+    .nav-elem {
+        color: #122b40;
+        opacity: 0.8;
+        text-shadow: 1px 1px 1px #0f0f0f;
+
+    }
+
+    .a-logo b:hover {
+        text-shadow: 0px 5px 2px black;
+    }
+
+    .nav-container {
+        display: block;
+        border-bottom: 1px solid #122b40;
+        font-size: 250%;
+    }
+
+    .nav-delimiter {
+        border-right: none;
+    }
+
+    .gallery {
+        width: 98%;
+        margin: 1% auto 0 auto;
+        min-height: 500px;
+        line-height: 0;
+        -webkit-column-count: 1;
+        -webkit-column-gap: 0px;
+        -moz-column-count: 1;
+        -moz-column-gap: 0px;
+        column-count: 1;
+        column-gap: 0px;
+    }
+
+    .gallery-elem {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .previous-img {
+        display: none;
+    }
+
+    .previous-img:hover {
+        display: none;
+    }
+
+    .full {
+        display: none;
+    }
+
+    .full-img {
+        display: none;
+    }
+
+    .close {
+        display: none;
+    }
+
+    .next-img {
+        display: none;
+    }
+
+    .switcher-left {
+        display: none;
+    }
+
+    .switcher-right {
+        display: none;
+    }
+
+    .pb {
+        display: none;
+    }
+
+    .contact {
+        width: 100%;
+        border-radius: 0px;
+        padding: 2% 3%;
+    }
+
+
+}
+/* Для телефонов и некоторых устройств у которых совсем маленький экран */
+@media (max-width: 480px) {
+    .nav-container {
+        display: block;
+        border-bottom: 1px solid #122b40;
+        font-size: 300%;
+        padding: 3% 0;
+    }
+
+}

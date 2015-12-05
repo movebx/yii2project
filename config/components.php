@@ -31,7 +31,7 @@ return [
     ],
 
     'errorHandler' => [
-        'errorAction' => 'site/error',
+        'errorAction' => 'default/error',
     ],
 
     'mailer' => [

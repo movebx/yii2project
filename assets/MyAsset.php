@@ -11,7 +11,10 @@ class MyAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
 
-    public $css = ['css/portfolio/layout.css'];
+    public $css = [
+        'css/portfolio/layout.css',
+        'css/portfolio/media.css',
+    ];
 
     public $jsOptions = ['position' => \yii\web\View::POS_HEAD];
 

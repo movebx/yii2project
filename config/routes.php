@@ -9,5 +9,13 @@ return
         [
             'pattern' => 'ajax',
             'route' => 'default/ajax',
-        ]
+        ],
+        [
+            'pattern' => 'portfolio',
+            'route' => 'default/index',
+        ],
+        [
+            'pattern' => 'contact',
+            'route' => 'default/contact',
+        ],
     ];
