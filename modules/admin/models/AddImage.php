@@ -23,7 +23,7 @@ class AddImage extends Model
     public function rules()
     {
         return [
-            ['imageFiles', 'file', 'maxFiles' => 5, 'extensions' => 'png, jpg, jpeg, gif',
+            ['imageFiles', 'image', 'maxFiles' => 5, 'extensions' => 'png, jpg, jpeg, gif',
                 'skipOnEmpty' => false, 'maxSize' => 5000000],
             ['alt', 'required'],
             ['alt', 'string', 'length' => [5, 30]],
