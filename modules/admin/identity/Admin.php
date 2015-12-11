@@ -18,8 +18,8 @@ class Admin extends Model implements \yii\web\IdentityInterface
         '1' => [
             'id' => '1',
             'login' => 'marinka',
-            'email' => 'zalupa@yandex.ua',
-            'password' => 'mirana1111',
+            'email' => 'z@yandex.ua',
+            'password' => '*******',
             'auth_key' => '',
             'access_token' => '',
         ]
